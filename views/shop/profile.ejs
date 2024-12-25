@@ -1,0 +1,28 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/product.css">
+</head>
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main>
+    <% if (prods.length > 0) { %>
+      <div class="grid">
+        <% for (let user of prods) { %>
+          <header>
+            <h1>Welcome, <%= user.name %>!</h1>
+        </header>
+        <main>
+            <section class="profile-container">
+                <h2>Your Profile</h2>
+                <p><strong>Name:</strong> <%= user.name %></p>
+                <p><strong>Email:</strong> <%= user.email %></p>
+                <p><strong>Priority:</strong> <%= user.priority %></p>
+                <a href="/logout" class="button logout">Logout</a>
+            </section>
+        <% } %>
+      </div>
+    <% } else { %>
+      <h1>No User Found!</h1>
+    <% } %>
+  </main>
+  <%- include('../includes/end.ejs') %>

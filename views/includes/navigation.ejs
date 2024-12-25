@@ -1,0 +1,44 @@
+<%- include('../includes/head.ejs') %>
+<div class="backdrop"></div>
+<header class="main-header">
+    <button id="side-menu-toggle">Menu</button>
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                <a href="https://www.glbitm.org/"></i><img src="https://www.glbitm.org/images/logo-2.webp"></a>
+            </li>
+            <li class="main-header__item gl">
+                <a class="<%= path === '/' ? 'active' : '' %>" href="/"></i>Suggestions and complaints page</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path === '/post' ? 'active' : '' %>" href="/post">Create Posts</a>
+            </li>
+            
+            <li class="main-header__item button">
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a class="<%= path === '/profile' ? 'active' : '' %>" href="/profile"><span class="material-symbols-outlined">
+                    account_circle
+                    </span></a>
+            </li>
+            <li class="main-header__item button">
+                <a class="<%= path === '/profile' ? 'active' : '' %>" href="/login">Login</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<nav class="mobile-nav">
+    <ul class="main-header__item-list">
+        <li class="main-header__item">
+            <a class="<%= path === '/' ? 'active' : '' %>" href="/"></i>G.L. Bajaj complaint and suggestion Page</a>
+        </li>
+        <li class="main-header__item">
+            <a class="<%= path === '/products' ? 'active' : '' %>" href="/home">Home</a>
+        </li>
+        <li class="main-header__item">
+            <a class="<%= path === '/cart' ? 'active' : '' %>" href="/posts">Create Posts</a>
+        </li>
+        <li class="main-header__item">
+            <a class="<%= path === '/orders' ? 'active' : '' %>" href="/profile">My profile</a>
+        </li>
+    </ul>
+</nav>

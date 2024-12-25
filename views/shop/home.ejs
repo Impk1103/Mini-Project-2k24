@@ -1,0 +1,48 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/product.css">
+</head>
+<body>
+  <%- include('../includes/navigation.ejs') %>
+
+  <main>
+    <% if (prods.length > 0) { %>
+      <div class="grid">
+        <% for (let post of prods) { %>
+          <article class="card product-item">
+            <header class="card__header">
+              <h1 class="product__title"><%= post.tag %> </h1>
+            </header>
+            <header class="card__header">
+              <h2 class="product__title"><%= post.title %></h2>
+            </header>
+            <div class="card__image">
+              <img src="<%= post.imageUrl %>" alt="<%= post.title %>">
+            </div>
+            <div class="card__content">
+              <p class="product__description"><%= post.description %></p>
+            </div>
+            <div class="card__actions">
+              <div class="actions-row">
+                
+                <a href="/comment" class="btn btn-comment">
+                  <span class="material-symbols-outlined">comment</span>
+                </a>
+                
+                <form action="/post-upvote" method="POST" class="upvote-form">
+                  <input type="hidden" name="postId" value="<%= post._id %>">
+                  <button type="submit" class="btn btn-upvote">
+                    <span class="material-symbols-outlined">stat_2</span>
+                    <span class="upvote-count"><%= post.upvotes %></span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </article>
+        <% } %>
+      </div>
+    <% } else { %>
+      <h1>No Post Found!</h1>
+    <% } %>
+  </main>
+
+  <%- include('../includes/end.ejs') %>
